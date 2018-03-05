@@ -97,7 +97,7 @@ def LoadGameData():
             gGames.append(game)
         games_left -= 1
 
-     if len(gGames) == 0:
+    if len(gGames) == 0:
         ExitWithError("No games found.")
         
 def ShowStartScreen():
