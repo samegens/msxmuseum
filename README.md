@@ -40,7 +40,7 @@ if [ `tty` = "/dev/tty1" ]; then
   clear
   echo Loading MSXMuseum
   cd msxmuseum
-  python openmsx_launcher.py
+  python msxmuseum.py
 fi
 ```
 
