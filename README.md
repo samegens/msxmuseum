@@ -17,7 +17,7 @@ For the best MSX games this information has been collected, the only thing missi
 Supported formats are rom, dsk and zip. The game file should be called game.rom, game.dsk or game.zip.
 6. Start msxmuseum.py.
 
-## How to turn in a permanent museum on a Raspberry Pi
+## How to turn this into a permanent museum on a Raspberry Pi
 
 1. You need at least a Raspberry Pi 3 because of its performance. An older version might work but some games will not run smoothly.
 2. Install the [latest Raspbian](https://thepi.io/how-to-install-raspbian-on-the-raspberry-pi/), minimal (non-GUI) version is ok.
