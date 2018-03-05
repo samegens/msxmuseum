@@ -1,4 +1,7 @@
 # MSX museum
+
+![MSX museum start screen](https://github.com/samegens/msxmuseum/blob/master/bootsplash/bootsplash.png?raw=true)
+
 MSX museum for Raspberry Pi, but also running on Windows and non-Pi Linux. 
 Written in python, this is a simply a launcher for [openMSX](http://openmsx.org/). 
 I call it a museum because of the extra information presented: company, year of release, box shot and screen shot.
