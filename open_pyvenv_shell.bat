@@ -1,0 +1,1 @@
+cmd /k d:\SAM\pyvenv\MSXMuseum\Scripts\activate.bat

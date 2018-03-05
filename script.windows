@@ -1,0 +1,25 @@
+#set fullscreen on
+load_icons none
+set fullspeedwhenloading on
+
+# make drawing faster
+set horizontal_stretch 320
+set accuracy line
+# fill screen
+set scale_factor 2
+
+plug joyporta joystick1
+
+# bind Start button on DualShock2 to F1
+bind "joy1 button9 down" "keymatrixdown 6 0x20"
+bind "joy1 button9 up" "keymatrixup 6 0x20"
+
+# bind PrtScn to raw screenshot, regardless of F-Lock state
+bind PRINT "screenshot -raw"
+bind INSERT "screenshot -raw"
+
+proc show_quit_message {} {
+    message "Press Alt+F4 to quit"
+}
+
+after time 3 show_quit_message

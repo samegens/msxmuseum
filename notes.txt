@@ -1,0 +1,125 @@
+img naar SD onder linux:
+sudo dd bs=1M if=2012-07-15-wheezy-raspbian.img of=/dev/sdc
+
+sudo apt-get install vim
+sudo apt-get install openmsx
+
+Voor zelf bouwen SDL:
+
+sudo apt-get install libxext-dev
+sudo apt-get install libasound2-dev libpulse-dev
+	anders werkt audio niet
+
+download SDL sources from http://www.libsdl.org/download-1.2.php
+extract
+./configure
+make
+sudo make install
+
+Om de tests te bouwen:
+cd test
+./configure
+make
+
+Interessantst klinkt testvidinfo, output onder X:
+Video driver: x11
+Current display: 1680x1050, 32 bits-per-pixel
+	Red Mask = 0x00ff0000
+	Green Mask = 0x0000ff00
+	Blue Mask = 0x000000ff
+Fullscreen video modes:
+	1680x1050x32
+	1600x1024x32
+	1440x900x32
+	1400x1050x32
+	1360x768x32
+	1280x1024x32
+	1280x960x32
+	1152x864x32
+	1024x768x32
+	960x720x32
+	960x600x32
+	960x540x32
+	928x696x32
+	896x672x32
+	840x525x32
+	832x624x32
+	800x600x32
+	800x512x32
+	720x450x32
+	720x400x32
+	700x525x32
+	680x384x32
+	640x512x32
+	640x480x32
+	640x400x32
+	640x350x32
+	576x432x32
+	512x384x32
+	416x312x32
+	400x300x32
+	360x200x32
+	320x240x32
+	320x200x32
+	320x175x32
+A window manager is available
+
+Buiten X:
+Couldn't initialize SDL: No available video device
+
+Dus waarschijnlijk toch gewoon X opstarten, kijken of dat kan zonder window manager (zodra ik openmsx automatisch kan laten starten).
+
+Na copieren ROMs:
+msx1:
+openmsx -machine Sony_HB-201P
+msx2:
+openmsx -machine Sony_HB-F9P
+
+Aparte settings file maken werkt niet: segmentation fault zodra je -setting meegeeft.
+Main settings file aanpassen werkt wel: /usr/share/openmsx/settings.xml
+settings file maken voor fullscreen werkt niet, voor het uitzetten de OSD LEDS wel.
+Script maken voor fullscreen werkt wel.
+openmsx -machine Sony_HB-201P -script script -cart GALIOUS.ROM
+
+pygame installeren:
+sudo apt-get install python-pygame
+
+resolution op Raspberry Pi via composite: 656x416
+maak ~/.xinitrc:
+cd OpenMSXPi && python openmsx_launcher.py
+Dit werkt niet op raspbian!
+
+
+Dat werkt! Alleen draait daar een oudere versie van python (2.6) en waarschijnlijk ook pygame, dus hij kan alleen 24 en 32 bit plaatjes smooth-scalen.
+Op de Pi willen we helemaal niet zelf scalen, dus dat moet ik van tevoren doen.
+
+Op RPi achterhalen welke videomodes ondersteund worden:
+/opt/vc/bin/tvservice -m CEA
+
+In mode 4 (720p) werkt launcher en openmsx
+
+voor 640x480:
+in /boot/config.txt:
+hdmi_group=1
+hdmi_mode=1
+
+in 640x480 klaagt hij dat er geen videomode groot genoeg is voor 640x480, raar.
+misschien te fixen met 
+disable_overscan=1
+?
+Zonder overscan mist er tekst rondom, dus volgende mode is misschien toch
+beter:
+de mode die daarna komt is 720x576 (mode 17)
+werkt, zwarte balken vallen mee, is misschien nog te fixen met under/overscan
+
+X starten in 16-bit:
+startx -- -depth 16
+
+auto login en auto startx:
+http://elinux.org/RPi_Debian_Auto_Login
+
+om audio aan de praat te krijgen:
+sudo apt-get install alsa-utils
+sudo modprobe snd_bcm2835
+voeg 'snd_bcm2835' toe aan /etc/modules
+

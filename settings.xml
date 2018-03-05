@@ -1,0 +1,8 @@
+<!DOCTYPE settings SYSTEM 'settings.dtd'>
+<settings>
+  <settings>
+    <setting id="osd_leds_set">none</setting>
+    <setting id="fullscreen">true</setting>
+  </settings>
+  <bindings/>
+</settings>

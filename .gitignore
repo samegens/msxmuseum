@@ -1,0 +1,8 @@
+/roms
+*.rom
+game.zip
+*.dsk
+__pycache__
+/systems
+*.jpg.org
+*.png.org

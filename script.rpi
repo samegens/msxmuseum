@@ -1,0 +1,48 @@
+set fullscreen on
+load_icons none
+
+# make drawing faster
+set horizontal_stretch 320
+set accuracy line
+# fill screen
+set scale_factor 2
+set master_volume 100
+
+plug joyporta joystick1
+
+unbind "joy1 button5 down"
+unbind "joy1 button5 up"
+
+# bind Start button on DualShock2 to F1
+#bind "joy1 button9 down" "keymatrixdown 6 0x20"
+#bind "joy1 button9 up" "keymatrixup 6 0x20"
+bind "joy1 button9 up" "main_menu_open"
+
+# L1: tab
+#bind "joy1 button6 down" "keymatrixdown 7 0x80"
+#bind "joy1 button6 up" "keymatrixup 7 0x80"
+
+# R1: backspace
+#bind "joy1 button7 down" "keymatrixdown 7 0x20"
+#bind "joy1 button7 up" "keymatrixup 7 0x20"
+
+# bind circle to M (braking in F1Spirit)
+bind "joy1 button1 down" "keymatrixdown 4 0x04"
+bind "joy1 button1 up" "keymatrixup 4 0x04"
+
+# bind PrtScn to raw screenshot, regardless of F-Lock state
+bind PRINT "screenshot -raw"
+bind INSERT "screenshot -raw"
+
+proc quitdialog {} {
+    message "Press SELECT again to quit"
+    after "joy1 button8 up" "exit"
+}
+
+bind "joy1 button8 up" "quitdialog"
+
+proc show_quit_message {} {
+    message "Press SELECT to quit"
+}
+
+after time 3 show_quit_message

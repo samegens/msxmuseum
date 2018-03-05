@@ -1,0 +1,4 @@
+set fullscreen on
+set fullspeedwhenloading on
+set kbd_numkeypad_always_enabled on
+#loadstate last

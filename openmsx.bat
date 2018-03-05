@@ -1,0 +1,1 @@
+d:\Dropbox\portable_apps\openmsx\openmsx.exe %*
