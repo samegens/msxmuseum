@@ -5,12 +5,14 @@ import subprocess
 import time
 import platform
 import logging
+import sys
 
 from games import gGameDescriptions
 from game import Game
 from joypad import *
 
 logging.basicConfig(filename='log.log',level=logging.DEBUG, format='%(asctime)s | %(levelname)s | %(module)s | %(message)s')
+logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 # Globals
 gJoystick = None
