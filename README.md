@@ -52,7 +52,9 @@ In menu:
 
 - up/down: select a game,
 - letter: select the next game with that letter,
-- SHIFT+letter: select the previous game with that letter.
+- SHIFT+letter: select the previous game with that letter,
+- space/enter: launch game,
+- ESC: quit MSX museum.
 
 In game:
 
@@ -64,3 +66,15 @@ In game:
 
 See the [openMSX User's Manual](http://openmsx.org/manual/user.html#keymapping) for more shortcuts.
 
+## Controller
+
+A controller can be plugged in. I used an old PS2 controller with an adapter to USB. The openMSX settings have been configured for this setup. If you need to change it, modify `script.rpi`.
+
+In menu:
+
+- up/down: select a game,
+- X: launch game.
+
+In game:
+
+- START: open openMSX menu (choose  'Exit openMSX' to return to the menu),
