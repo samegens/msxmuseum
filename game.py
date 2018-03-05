@@ -6,7 +6,7 @@ import platform
 
 
 def ExitWithError(inMessage):
-    print(inMessage)
+    logging.error(inMessage)
     exit(-1)
 
 
@@ -34,7 +34,7 @@ class Game:
             self.mDiskPath = directory + "/game.dsk"
 			
         if not self.mRomPath and not self.mDiskPath:
-            print("Warning: could not find rom or disk for {0} in directory {1} (tried game.dsk, game.rom and game.zip)".format(self.mName, directory))
+            logging.warning("Warning: could not find rom or disk for {0} in directory {1} (tried game.dsk, game.rom and game.zip)".format(self.mName, directory))
 
         if os.path.exists(self.mBoxShotPath):
             self.mBoxShotImage = LoadImage(self.mBoxShotPath)

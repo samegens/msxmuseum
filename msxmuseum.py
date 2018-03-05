@@ -239,9 +239,6 @@ def Main():
         if e.type == pygame.QUIT or pygame.key.get_pressed()[pygame.K_ESCAPE]:
             break
 
-        #txt = '%s: %s' % (pygame.event.event_name(e.type), e.dict)
-        #print(txt)
-
         joypad_event = TranslateEvent(e)
         joypad_event_name = GetJoypadEventName(joypad_event)
 
