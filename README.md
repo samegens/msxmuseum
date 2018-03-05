@@ -5,6 +5,7 @@
 MSX museum for Raspberry Pi, but also running on Windows and non-Pi Linux. 
 Written in python, this is a simply a launcher for [openMSX](http://openmsx.org/). 
 I call it a museum because of the extra information presented: company, year of release, box shot and screen shot.
+For the best MSX games this information has been collected, the only thing missing are the roms and disk images, because it's not legal to distribute them.
 
 ## How to set up
 
