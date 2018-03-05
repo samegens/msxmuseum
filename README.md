@@ -22,20 +22,27 @@ Supported formats are rom, dsk and zip. The game file should be called game.rom,
 1. You need at least a Raspberry Pi 3 because of its performance. An older version might work but some games will not run smoothly.
 2. Install the [latest Raspbian](https://thepi.io/how-to-install-raspbian-on-the-raspberry-pi/), minimal (non-GUI) version is ok.
 3. Install pygame and openMSX:
-    sudo apt-get install python-pygame
-    sudo apt-get install openmsx
+
+```
+sudo apt-get install python-pygame
+sudo apt-get install openmsx
+````
+
 4. Make sure you're able to put files on the RPi, either using ssh/sftp, USB-stick or by downloading from the network.
 5. Clone or copy this repository to the pi home directory, in this example I assume the repository is located in `/home/pi/msxmuseum`.
 6. Automatically run the MSX museum on startup. 
 7. Optional: change the boot screen of the Rpi to the supplied bootscreen (`/home/pi/msxmuseum/bootsplash/bootsplash.png`), so [this page](http://www.raspberry-projects.com/pi/pi-operating-systems/raspbian/custom-boot-up-screen) for instructions.
 8. Run `sudo raspi-config` and change the bootup options to 'Console Autologin'.
 9. Add this at the bottom of `/home/pi/.bashrc`:
-    if [ `tty` = "/dev/tty1" ]; then
-      clear
-      echo Loading MSXMuseum
-      cd msxmuseum
-      python openmsx_launcher.py
-    fi
+
+```
+if [ `tty` = "/dev/tty1" ]; then
+  clear
+  echo Loading MSXMuseum
+  cd msxmuseum
+  python openmsx_launcher.py
+fi
+```
 
 10. Reboot, on boot the MSX museum boot splash should be displayed and after that the application should be automatically started.
 
