@@ -70,8 +70,6 @@ class Game:
 
         
     def Launch(self, inScriptExtension):
-        #subprocess.call(["openmsx", "-machine", "Philips_NMS_8245", "-script", "script.linux", "-cart", self.mRomPath])
-        #return
         msxExe = 'openmsx'
         if platform.system() == "Windows":
             msxExe = "d:\\Dropbox\\portable_apps\\openmsx\\openmsx.exe"
@@ -92,7 +90,7 @@ class Game:
         logging.info('  Alt-F8: save state')
         logging.info('  Alt-F7: load state')
         fnull = open(os.devnull, "w")
-        subprocess.call(cmdline, stdout = fnull, stderr = subprocess.STDOUT) #, shell=True)
+        subprocess.call(cmdline, stdout = fnull, stderr = subprocess.STDOUT)
 
 
     mName = ''
