@@ -9,13 +9,13 @@ For the best MSX games this information has been collected, the only thing missi
 
 ## How to set up
 
-0. Clone this repository.
-1. Install the [latest python 3 version](https://www.python.org/downloads/).
-2. Install the [latest openMSX version](http://openmsx.org/).
-3. In openmsx.bat (Windows) or openmsx.sh (non-Windows) and change the path to openmsx.exe.
-4. Get roms or images of the games. Put them in the appropriate directory of the games directory within this repository. 
+1. Clone this repository.
+2. Install the [latest python 3 version](https://www.python.org/downloads/).
+3. Install the [latest openMSX version](http://openmsx.org/).
+4. In openmsx.bat (Windows) or openmsx.sh (non-Windows) and change the path to openmsx.exe.
+5. Get roms or images of the games. Put them in the appropriate directory of the games directory within this repository. 
 Supported formats are rom, dsk and zip. The game file should be called game.rom, game.dsk or game.zip.
-4. Start msxmuseum.py.
+6. Start msxmuseum.py.
 
 ## Keys
 
