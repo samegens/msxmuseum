@@ -23,15 +23,18 @@ class Game:
         else:
             directory = os.path.join(games_base_dir, inTuple[0])
 
-        self.mBoxShotPath = directory + "/boxshot.jpg"
-        self.mScreenShotPath = directory + "/screenshot.png"
+        self.mBoxShotPath = os.path.join(directory, "boxshot.jpg")
+        self.mScreenShotPath = os.path.join(directory, "screenshot.png")
 
-        if os.path.exists(directory + "/game.rom"):
-            self.mRomPath = directory + "/game.rom"
-        if os.path.exists(directory + "/game.zip"):
-            self.mRomPath = directory + "/game.zip"
-        if os.path.exists(directory + "/game.dsk"):
-            self.mDiskPath = directory + "/game.dsk"
+        game_path = os.path.join(directory, "game.rom")
+        if os.path.exists(game_path):
+            self.mRomPath = game_path
+        game_path = os.path.join(directory, "game.zip")
+        if os.path.exists(game_path):
+            self.mRomPath = game_path
+        game_path = os.path.join(directory, "game.dsk")
+        if os.path.exists(game_path):
+            self.mDiskPath = game_path
 			
         if not self.mRomPath and not self.mDiskPath:
             logging.warning("Warning: could not find rom or disk for {0} in directory {1} (tried game.dsk, game.rom and game.zip)".format(self.mName, directory))
