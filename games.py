@@ -60,6 +60,7 @@ gGameDescriptions = [
     ('The Goonies', 'Konami', 1986, 'Goonies'),
     ('Thexder', 'Game Arts', 1986),
     ('Twin Bee', 'Konami', 1986, 'TwinBee'),
+    ('Who Dares Wins 2', 'Alligata', 1986, 'WhoDaresWins2'),
     ('Vampire Killer', 'Konami', 1986, 'VampireKiller'),
     ('Zanac AI', 'Pony', 1986, 'ZanacAI'),
     ('Ancient Ys Vanished Omen', 'Falcom', 1987, 'Ys1'),
