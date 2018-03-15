@@ -33,7 +33,6 @@ sudo apt-get install openmsx
 
 4. Make sure you're able to put files on the RPi, either using ssh/sftp, USB-stick or by downloading from the network.
 5. Clone or copy this repository to the pi home directory, in this example I assume the repository is located in `/home/pi/msxmuseum`.
-6. Automatically run the MSX museum on startup. 
 7. Optional: change the boot screen of the Rpi to the supplied bootscreen (`/home/pi/msxmuseum/bootsplash/bootsplash.png`), so [this page](http://www.raspberry-projects.com/pi/pi-operating-systems/raspbian/custom-boot-up-screen) for instructions.
 8. Run `sudo raspi-config` and change the bootup options to 'Console Autologin'.
 9. Add this at the bottom of `/home/pi/.bashrc`:
